@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thesis.mapper.SubjectMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.thesis.pojo.Subject">
+        <id column="Sub_id" property="subId" />
+        <result column="Sub_name" property="subName" />
+        <result column="Introduce" property="Introduce" />
+        <result column="Part_num" property="partNum" />
+        <result column="Postil_flag" property="postilFlag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        Sub_id, Sub_name, Introduce, Part_num, Postil_flag
+    </sql>
+
+</mapper>

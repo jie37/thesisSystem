@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thesis.server.mapper.StudentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.thesis.pojo.Student">
+        <id column="Stu_id" property="stuId" />
+        <result column="Stu_name" property="stuName" />
+        <result column="Stu_sex" property="stuSex" />
+        <result column="Depar_id" property="deparId" />
+        <result column="Phone" property="phone" />
+    </resultMap>
+
+<!--     通用查询结果列 -->
+    <sql id="Base_Column_List">
+        Stu_id, Stu_name, Stu_sex, Depar_id, Phone
+    </sql>
+    <select id="getStudentByUserId" parameterType="string" resultMap="BaseResultMap">
+        select *
+        From `user`, `student`
+        where `user`.id=`student`.Stu_id and `user`.id=#{id}
+    </select>
+</mapper>
